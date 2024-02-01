@@ -92,7 +92,7 @@ public class Othello {
         System.out.println();
 
         /*
-         tant que le plateau n'est pas entierement rempli ou que les deux joueurs ont au moins un pions sur le plateau le jeu continue
+         tant que le plateau n'est pas entierement rempli ou que les deux joueurs ont au moins un pion sur le plateau le jeu continue
          */
         while (!Othello.finJeu(plateau,gagnant)) {
 
@@ -100,7 +100,7 @@ public class Othello {
             passeTour = 0;
 
             /*
-            si au bout de deux tour les joueurs n'ont pas passer leur tour à la suite on reset le cumule
+            si au bout de deux tours les joueurs n'ont pas passer leur tour à la suite on reset le cumule
              */
 
             Othello.afficherplateau(plateau);
@@ -113,11 +113,11 @@ public class Othello {
                 System.out.println("Il vous reste :  " + nombrePionBlanc + " pions " + '\n');
             }
 
-            /* boucle qui va demander au joueur d'enter son coup
-            si celui-ci est valide le pions va être placé sur le plateau.
+            /* boucle qui va demander au joueur d'entrer son coup
+            si celui-ci est valide le pion va être placé sur le plateau.
             sinon on affiche un message d'erreur sur le plateau et on demande au joueur d'entrer un autre coup.
             Le joueur peut passer son tour en tapant "PT" ou abondonner en tapant FF, cela retournera le tour du joueur qui a abondonné.
-            la valeur sera récupérer par le menue qui va appelé la méthode finDeJeu, afin d'afficher le joueur gagnant.
+            la valeur sera récupérer par le menu qui va appeler la méthode finDeJeu(), afin d'afficher le joueur gagnant.
              */
 
             do{
@@ -162,7 +162,7 @@ public class Othello {
                     break;
                 }
 
-                /* extrait le premier caractère correspondant à la colonne entrer par le joueur
+                /* extrait le premier caractère correspondant à la colonne entrée par le joueur
                 prend le code ascii de la lettre et la soustrait par le code ascii de la lettre (a/A)
                 Si le joueur entre un entier comme la valeur du code ascii de 0 est de 48 et augmente de 1 pour chaque nombre suivant, la valeur calculé ne sera jamais inférieur où égal à 8.
                  */
@@ -190,7 +190,7 @@ public class Othello {
             }while (colonne<-1 || colonne >=8 || ligne<0 || ligne >=8 ||Othello.retournePions(tour, ligne,colonne,plateau) == 0);
 
             /*
-            après avoir convertis le pions c'est le tour du joueur suivant de jouer
+            après avoir converti le pion c'est le tour du joueur suivant de jouer
              */
 
             if (tour == Noir) {
@@ -214,7 +214,7 @@ public class Othello {
         }
 
         /*
-         lorque le plateau est complétement remplie où qu'un joueur n'a plus de pièces sur le plateau, donc ne peut plus convertir de pièce.
+         lorque le plateau est complétement rempli où qu'un joueur n'a plus de pièces sur le plateau, donc ne peut plus convertir de pièce.
            La partie est terminé.
          */
 
